@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# react_memo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 概要
 
-## Available Scripts
+以下の機能を備えたSPAメモアプリです。
 
-In the project directory, you can run:
+- 一覧
+- 詳細
+- 追加
+- 編集
+- 削除
 
-### `npm start`
+## 使い方
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. 以下のコマンドを実行し、このリポジトリをクローンしてください。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+git clone https://github.com/kousei-ya/react_memo.git
+```
 
-### `npm test`
+2. 以下のコマンドを実行し、クローンしてきたリポジトリに移動します。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+cd react_memo
+```
 
-### `npm run build`
+3. 以下のコマンドを実行し、必要なnpmパッケージをインストールしてください。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. 以下のコマンドを実行すると、メモアプリが起動します。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm start
+```
 
-### `npm run eject`
+## 機能説明
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 一覧
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+メモの１行目をタイトルとして一覧表示します。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 詳細
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+一覧画面からタイトルをクリックすると、そのメモの詳細画面に移行します。
 
-## Learn More
+### 追加
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+＋ボタンをクリックすると、「新規メモ」というメモが作成され、そのメモを編集できます。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 編集
 
-### Code Splitting
+テキストエリアの内容を編集し、編集ボタンをクリックすると保存されます。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 削除
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+編集状態から削除ボタンをクリックすると、そのメモが削除されます。
