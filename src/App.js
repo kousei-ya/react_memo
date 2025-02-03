@@ -27,7 +27,7 @@ export default function App() {
 
   const updateMemo = (uuid, updateMemo) => {
     const updatedMemos = memos.map((memo) =>
-      memo.uuid === uuid ? updateMemo : memo
+      memo.uuid === uuid ? updateMemo : memo,
     );
     setMemos(updatedMemos);
     saveMemos(updatedMemos);
