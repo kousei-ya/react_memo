@@ -13,22 +13,26 @@ export default function App() {
     setMemos(storedMemos || []);
   }, []);
 
-  useEffect(() => {
-    saveMemos(memos);
-  }, [memos]);
-
   const addMemo = () => {
     const newMemo = { id: Date.now(), title: "新規メモ", content: "" };
-    setMemos([...memos, newMemo]);
+    const updatedMemos = [...memos, newMemo];
+    setMemos(updatedMemos);
+    saveMemos(updatedMemos);
     setEditingMemo(newMemo);
   };
 
   const updateMemo = (id, updateMemo) => {
-    setMemos(memos.map((memo) => (memo.id === id ? updateMemo : memo)));
+    const updatedMemos = memos.map((memo) =>
+      memo.id === id ? updateMemo : memo
+    );
+    setMemos(updatedMemos);
+    saveMemos(updatedMemos);
   };
 
   const deleteMemo = (id) => {
-    setMemos(memos.filter((memo) => memo.id !== id));
+    const updatedMemos = memos.filter((memo) => memo.id !== id);
+    setMemos(updatedMemos);
+    saveMemos(updatedMemos);
     setEditingMemo(null);
   };
 
