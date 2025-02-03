@@ -1,10 +1,10 @@
-const STRAGE_KEY = "memoApp";
+const STORAGE_KEY = "memoApp";
 
 export function loadMemos() {
-  const data = localStorage.getItem(STRAGE_KEY);
+  const data = localStorage.getItem(STORAGE_KEY);
   return data ? JSON.parse(data) : [];
 }
 
 export function saveMemos(memos) {
-  localStorage.setItem(STRAGE_KEY, JSON.stringify(memos));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(memos));
 }
