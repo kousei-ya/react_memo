@@ -14,23 +14,27 @@ export default function App() {
   }, []);
 
   const addMemo = () => {
-    const newMemo = { id: Date.now(), title: "新規メモ", content: "" };
+    const newMemo = {
+      uuid: window.crypto.randomUUID(),
+      title: "新規メモ",
+      content: "",
+    };
     const updatedMemos = [...memos, newMemo];
     setMemos(updatedMemos);
     saveMemos(updatedMemos);
     setEditingMemo(newMemo);
   };
 
-  const updateMemo = (id, updateMemo) => {
+  const updateMemo = (uuid, updateMemo) => {
     const updatedMemos = memos.map((memo) =>
-      memo.id === id ? updateMemo : memo
+      memo.uuid === uuid ? updateMemo : memo
     );
     setMemos(updatedMemos);
     saveMemos(updatedMemos);
   };
 
-  const deleteMemo = (id) => {
-    const updatedMemos = memos.filter((memo) => memo.id !== id);
+  const deleteMemo = (uuid) => {
+    const updatedMemos = memos.filter((memo) => memo.uuid !== uuid);
     setMemos(updatedMemos);
     saveMemos(updatedMemos);
     setEditingMemo(null);
@@ -50,10 +54,10 @@ export default function App() {
           <MemoForm
             memo={editingMemo}
             onSave={(updatedMemo) => {
-              updateMemo(editingMemo.id, updatedMemo);
+              updateMemo(editingMemo.uuid, updatedMemo);
               setEditingMemo(null);
             }}
-            onDelete={() => deleteMemo(editingMemo.id)}
+            onDelete={() => deleteMemo(editingMemo.uuid)}
           />
         )}
       </div>
