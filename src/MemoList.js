@@ -19,16 +19,9 @@ export default function MemoList({ memos, onEdit, onAdd }) {
       ))}
 
       <div>
-        <a
-          href="#"
-          className="memo-item add-memo"
-          onClick={(e) => {
-            e.preventDefault();
-            onAdd();
-          }}
-        >
+        <button className="memo-item add-memo" onClick={onAdd}>
           ＋
-        </a>
+        </button>
       </div>
     </div>
   );
