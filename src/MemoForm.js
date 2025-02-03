@@ -19,7 +19,7 @@ export default function MemoForm({ memo, onSave, onDelete }) {
         placeholder="メモの内容"
       />
       <div className="form-actions">
-        <button onClick={handleSave}>編集</button>
+        <button onClick={handleSave}>保存</button>
         <button onClick={onDelete}>削除</button>{" "}
       </div>
     </div>
