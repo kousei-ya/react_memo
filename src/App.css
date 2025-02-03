@@ -29,21 +29,36 @@
 }
 
 .memo-item {
+  background: none;
+  border: none;
   color: blue;
   text-decoration: underline;
   cursor: pointer;
-  font-size: 30px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  text-align: left;
 }
 
-.memo-item.add-memo {
-  color: blue;
-  font-size: 30px;
-  font-weight: bold;
+.memo-item:hover {
   text-decoration: none;
+}
+
+.add-memo {
+  all: unset;
+  background: none !important;
+
+  color: blue;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.add-memo:hover {
+  text-decoration: none;
+  color: darkblue;
 }
 
 .memo-form {
@@ -65,18 +80,13 @@ textarea {
   height: 100%;
 }
 
-.form-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
 button {
   padding: 10px;
   font-size: 18px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:first-child {
@@ -85,8 +95,22 @@ button:first-child {
   color: black;
 }
 
+button:first-child:hover {
+  background-color: darkgray;
+}
+
 button:last-child {
   flex-basis: 30%;
   background-color: gray;
   color: black;
+}
+
+button:last-child:hover {
+  background-color: darkgray;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
