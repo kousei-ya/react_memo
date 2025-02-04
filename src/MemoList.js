@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "./AuthContext.js";
 
 export default function MemoList({ memos, onEdit, onAdd }) {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <div className="memo-list">
       {memos.map((memo) => (
@@ -17,12 +19,13 @@ export default function MemoList({ memos, onEdit, onAdd }) {
           </a>
         </div>
       ))}
-
-      <div>
-        <button className="memo-item add-memo" onClick={onAdd}>
-          ＋
-        </button>
-      </div>
+      {isLoggedIn && (
+        <div>
+          <button className="memo-item add-memo" onClick={onAdd}>
+            ＋
+          </button>
+        </div>
+      )}
     </div>
   );
 }
