@@ -1,22 +1,55 @@
 .App {
   display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
   flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
 }
 
 .title {
   font-size: 36px;
   font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-  margin-top: 20px;
+  margin: 0 auto;
+}
+
+.login-info-container {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-info {
+  font-size: 20px;
+  margin: 0;
+}
+
+.login-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: gray;
+  color: black;
+  margin-top: 10px;
 }
 
 .main-content {
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .memo-list {
@@ -35,30 +68,26 @@
   text-decoration: underline;
   cursor: pointer;
   font-size: 1.5rem;
-  text-align: left;
 }
 
 .memo-item:hover {
   text-decoration: none;
 }
 
-.add-memo {
-  all: unset;
-  background: none !important;
-
+.memo-item.add-memo {
   color: blue;
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: bold;
+  text-decoration: none;
+  background: none;
+  border: none;
   cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  margin: 20px auto;
-  width: 100%;
+  display: inline;
+  padding: 0;
 }
 
-.add-memo:hover {
-  text-decoration: none;
-  color: darkblue;
+.memo-item.add-memo:hover {
+  text-decoration: underline;
 }
 
 .memo-form {
@@ -80,13 +109,18 @@ textarea {
   height: 100%;
 }
 
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 button {
   padding: 10px;
   font-size: 18px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 button:first-child {
@@ -95,22 +129,8 @@ button:first-child {
   color: black;
 }
 
-button:first-child:hover {
-  background-color: darkgray;
-}
-
 button:last-child {
   flex-basis: 30%;
   background-color: gray;
   color: black;
-}
-
-button:last-child:hover {
-  background-color: darkgray;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
 }
