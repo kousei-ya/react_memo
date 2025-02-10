@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import AuthContext from "./AuthContext.js";
+import React, { useState, useEffect } from "react";
+import useAuth from "./useAuth.js";
 
 export default function MemoForm({ memo, onSave, onDelete }) {
   const [content, setContent] = useState(memo.content);
@@ -12,7 +12,7 @@ export default function MemoForm({ memo, onSave, onDelete }) {
     onSave({ ...memo, content, title: content.split("\n")[0] });
   };
 
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useAuth();
   return (
     <div className="memo-form">
       <textarea

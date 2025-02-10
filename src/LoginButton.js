@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import AuthContext from "./AuthContext.js";
+import React from "react";
+import useAuth from "./useAuth.js";
 
 const LoginButton = () => {
-  const { isLoggedIn, login, logout } = useContext(AuthContext);
+  const { isLoggedIn, login, logout } = useAuth();
 
   return (
     <button onClick={isLoggedIn ? logout : login}>

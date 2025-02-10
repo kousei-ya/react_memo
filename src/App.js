@@ -1,10 +1,10 @@
 import "./App.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import MemoList from "./MemoList.js";
 import MemoForm from "./MemoForm.js";
 import { loadMemos, saveMemos } from "./storage.js";
 import LoginButton from "./LoginButton.js";
-import AuthContext from "./AuthContext.js";
+import useAuth from "./useAuth.js";
 
 export default function App() {
   const [memos, setMemos] = useState([]);
@@ -42,7 +42,7 @@ export default function App() {
     setEditingMemo(null);
   };
 
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useAuth();
 
   return (
     <div className="App">

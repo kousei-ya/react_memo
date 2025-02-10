@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import AuthContext from "./AuthContext.js";
+import React from "react";
+import useAuth from "./useAuth.js";
 
 export default function MemoList({ memos, onEdit, onAdd }) {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useAuth();
   return (
     <div className="memo-list">
       {memos.map((memo) => (
