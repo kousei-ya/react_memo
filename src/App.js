@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import MemoList from "./MemoList.js";
 import MemoForm from "./MemoForm.js";
 import { loadMemos, saveMemos } from "./storage.js";
+import LoginButton from "./LoginButton.js";
+import useAuth from "./useAuth.js";
 
 export default function App() {
   const [memos, setMemos] = useState([]);
@@ -25,9 +27,9 @@ export default function App() {
     setEditingMemo(newMemo);
   };
 
-  const updateMemo = (uuid, updateMemo) => {
+  const updateMemo = (uuid, updatedMemo) => {
     const updatedMemos = memos.map((memo) =>
-      memo.uuid === uuid ? updateMemo : memo,
+      memo.uuid === uuid ? updatedMemo : memo,
     );
     setMemos(updatedMemos);
     saveMemos(updatedMemos);
@@ -40,9 +42,19 @@ export default function App() {
     setEditingMemo(null);
   };
 
+  const { isLoggedIn } = useAuth();
+
   return (
     <div className="App">
-      <h1 className="title">メモアプリ</h1>
+      <div className="header">
+        <div className="login-info-container">
+          <h2 className="login-info">
+            {isLoggedIn ? "ログイン中です" : "ログアウトしています"}
+          </h2>
+          <LoginButton />
+        </div>
+        <h1 className="title">メモアプリ</h1>
+      </div>
       <div className="main-content">
         <MemoList
           memos={memos}

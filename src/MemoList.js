@@ -1,6 +1,8 @@
 import React from "react";
+import useAuth from "./useAuth.js";
 
 export default function MemoList({ memos, onEdit, onAdd }) {
+  const { isLoggedIn } = useAuth();
   return (
     <div className="memo-list">
       {memos.map((memo) => (
@@ -17,12 +19,13 @@ export default function MemoList({ memos, onEdit, onAdd }) {
           </a>
         </div>
       ))}
-
-      <div>
-        <button className="memo-item add-memo" onClick={onAdd}>
-          ＋
-        </button>
-      </div>
+      {isLoggedIn && (
+        <div>
+          <button className="memo-item add-memo" onClick={onAdd}>
+            ＋
+          </button>
+        </div>
+      )}
     </div>
   );
 }
